@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EDL Lucky Draw</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-shell">
+  <div class="top-power">
+    <span>⚡</span><span>⚡</span><span>⚡</span><span>⚡</span><span>⚡</span>
+  </div>
+
+  <header class="brand">
+    <div class="brand-mark"><b>EDL</b><strong>Lao</strong></div>
+    <div>
+      <div class="eyebrow">EDL Lao</div>
+      <h1>LUCKY DRAW</h1>
+      <p>ຮ່ວມສົນຸກ ລຸ້ນຮັບລາງວັນພິເສດ</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="pill">🎁 LUCKY DRAW</span>
+        <h2>ລຸ້ນໂຊກດີ<br><em>ຮັບລາງວັນ</em></h2>
+        <p>ກົດປຸ່ມລຸ້ນ ແລະ ລຸ້ນຮັບລາງວັນພິເສດຈາກ BCEL ONE</p>
+      </div>
+      <div class="tower tower-left">⚡</div>
+      <div class="tower tower-right">⚡</div>
+    </section>
+
+    <section class="draw-panel">
+      <div class="prize-label">ລາງວັນທີ່ຈະລຸ້ນ</div>
+      <div id="prizeName" class="prize-name">ກົດ START ເພື່ອລຸ້ນ</div>
+      <div class="prize-sub" id="prizeSub">ຂໍໃຫ້ໂຊກດີ 🎉</div>
+
+      <div class="draw-circle">
+        <div class="circle-ring"></div>
+        <div class="circle-logo">EDL<br><b>Lao</b></div>
+        <div class="spark s1">✦</div><div class="spark s2">✦</div><div class="spark s3">✦</div>
+      </div>
+
+      <button id="startBtn" class="start-btn" onclick="startDraw()">START</button>
+      <button class="admin-link" onclick="openAdmin()">⚙️ Admin / Setup Prize</button>
+      <div class="status" id="status">ພ້ອມລຸ້ນແລ້ວ</div>
+    </section>
+
+    <section class="feature-row">
+      <div class="feature"><span>🎁</span><b>ລາງວັນພິເສດ</b><small>ລຸ້ນຮັບຂອງລາງວັນ</small></div>
+      <div class="feature"><span>⚡</span><b>ລຸ້ນງ່າຍ</b><small>ກົດປຸ່ມດຽວ</small></div>
+      <div class="feature"><span>🏆</span><b>ລຸ້ນໃຫຍ່</b><small>ລາງວັນ Jackpot</small></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span>EDL</span> <b>Lao</b></div>
+    <div>ໂຊກດີ! ຂໍໃຫ້ລຸ້ນໄດ້ລາງວັນ 🎉</div>
+  </footer>
+</div>
+
+<div id="adminModal" class="modal hidden">
+  <div class="modal-box">
+    <div class="modal-head"><h2>⚙️ Prize Setup</h2><button onclick="closeAdmin()">×</button></div>
+    <div class="admin-grid">
+      <label>Big prize every N plays
+        <input id="bigEvery" type="number" min="0" placeholder="10">
+      </label>
+      <label>Big prize name
+        <input id="bigPrize" placeholder="iPhone 15">
+      </label>
+    </div>
+    <div class="add-row">
+      <input id="newPrize" placeholder="Prize name">
+      <input id="newQty" type="number" min="1" placeholder="Qty">
+      <button onclick="addPrize()">+ Add</button>
+    </div>
+    <div id="prizeList"></div>
+    <div class="modal-actions">
+      <button class="save-btn" onclick="saveSettings()">Save Setup</button>
+      <button class="reset-btn" onclick="resetDraw()">Reset Counter</button>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
